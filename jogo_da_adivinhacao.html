@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da Adivinhação</title>
+</head>
+<body>
+    <script>
+        let numeroPensado = Math.floor(Math.random()*100 + 1);
+        //tentativa = 1
+        for(tentativa = 1; tentativa <= 3; tentativa++){
+            //se tentativa for menor ou igual a tres execute as instruções abaixo
+            let chute = prompt("Adivinhe um numero de 1 a 100");
+            if (chute == numeroPensado){
+                alert("Parabens, você acertou");
+                break;
+            }else{
+                alert("Você errou! Você tem mais" + 
+                 (3 - tentativa) + " tentativas.");
+                 if(tentativa == 3 )
+                    document.write("Eu tinha pensado " + numeroPensado);
+                    
+            }
+            //Incremente o valor de entativa em 1
+            //Vá para a linha 13
+        }
+        alert("Eu pensei:" + numeroPensado);
+        let continuarJogo = prompt("Quer continuar jogando? Digite 1, se não quiser continuar digite 2");
+        if(continuarJogo == "1"){
+            function reiniciarPrograma(){
+                location.reload();
+            }
+            reiniciarPrograma();
+
+        }else{
+            alert("Jogo encerrado");
+        }
+  </script>
+</body>
+</html>
